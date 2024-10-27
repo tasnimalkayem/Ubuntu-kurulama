@@ -1,52 +1,74 @@
-# Ubuntu Kurulumu
+# VirtualBox Üzerinde Ubuntu 24.04 Kurulumu
 
-## Gerekli Ön Koşullar:
-1. **Bilgisayarın şarjı:** %100 olmalı.
-2. **Boş Disk Alanı:** Bilgisayarınızda Ubuntu’yu kurmak için yeterli boş yer bulunmalıdır.
-3. **Flash Bellek:** En az 12 GB kapasiteli bir USB bellek (içindeki veriler silinecektir; yedek almanız önerilir).
+Bu repo, VirtualBox üzerinde Ubuntu 24.04 kurulumunu adım adım açıklayan bir rehber sunmaktadır. Her adım, görsellerle desteklenmiştir.
 
-## Kurulum Adımları:
+## İçindekiler
 
-### 1. Ubuntu İndirme
-- **Ubuntu 24.04 Desktop** işletim sistemini [resmi web sitesinden](https://ubuntu.com/download) indirin.
-  ![Ubuntu İndirme](https://github.com/user-attachments/assets/76ad6994-d34a-42b3-a39c-b88d444097a5)
-- "Download for free" seçeneğine tıklayın.
-  ![Download for free](https://github.com/user-attachments/assets/97fff047-ac50-461d-8e0a-ee42570a22a9)
-- "Download 24.04.1 LTS" en son versiyonunu indirin.
-  ![Download 24.04.1 LTS](https://github.com/user-attachments/assets/f535ebb0-135a-42c1-8b7b-a2219ae044da)
+- [Gerekli Ön Hazırlıklar](#gerekli-ön-hazırlıklar)
+- [Kurulum Adımları](#kurulum-adımları)
+- [Sonuç](#sonuç)
 
-### 2. ISO Dosyasını Flash Belleğe Yazma
-- ISO dosyasını flash belleğe yazmak için **Balena Etcher** uygulamasını kullanın.
-  ![Balena Etcher](https://github.com/user-attachments/assets/4e5e1dba-41f6-4067-b32a-6cfee9e02112)
+## Gerekli Ön Hazırlıklar
 
-- Balena Etcher'ı açın ve "Flash from file" seçeneğine ISO dosyasını sürükleyin.
-  ![Flash from file](https://github.com/user-attachments/assets/c7ab69be-edcf-4453-9e1d-89d449784a7e)
+1. **VirtualBox** programını indirip kurun. İndirme linki: [virtualbox.org](https://www.virtualbox.org/).
+2. **Ubuntu 24.04 Desktop ISO** dosyasını indirin. İndirme linki: [ubuntu.com](https://ubuntu.com/download/desktop).
 
-### 3. Bilgisayarı Boot Menüden Başlatma
-- Bilgisayarınızı tamamen kapatın. Açarken (Esc) tuşuna birkaç kez basarak Boot Menü'nü açın.
-  ![Boot Menu](https://github.com/user-attachments/assets/113d533e-da0d-4792-a010-5dbebfddfdb1)
+## Kurulum Adımları
 
-- Boot Menü'den **USB HARD DRIVE (UEFI)** seçeneğini seçin.
-  ![USB HARD DRIVE](https://github.com/user-attachments/assets/a08f832e-bab9-436f-9d2d-3aec79dc453c)
+### Adım 1: Yeni Sanal Makine Oluşturma
+- **VirtualBox**’ı açın ve yeni bir sanal makine oluşturmak için **New** butonuna tıkladım.
+- Makine adını "Ubuntu 24.04" olarak girdim, sistem türünü **Linux** ve sürümünü **Ubuntu (64-bit)** olarak seçtim.
+- ![Yeni Sanal Makine Oluşturma](images/adim1.png)
 
-### 4. Ubuntu'yu Deneme veya Kurma
-- Açılan menüde Ubuntu'yu denemek veya yüklemek için ilk seçeneği seçin.
-  ![Ubuntu Deneme](https://github.com/user-attachments/assets/4e67ec70-5231-4ebe-a1d3-b17d0be2aa3e)
+### Adım 2: Bellek (RAM) Ayarlama
+- Sanal makine için 4 GB RAM ayırdım.
+- ![Bellek Ayarlama](images/adim2.png)
 
-### 5. Kurulum Seçenekleri
-- "Öntanımlı Kurulumu" seçin.
-  ![Öntanımlı Kurulum](https://github.com/user-attachments/assets/2c582629-e069-40ad-949e-8a6ac1c11fb9)
+### Adım 3: Sanal Sabit Disk Oluşturma
+- **Create a virtual hard disk now** seçeneğini seçtim, disk türünü **VDI** ve **Dynamically allocated** olarak ayarladım.
+- Disk boyutunu 20 GB olarak belirledim.
+- ![Sanal Sabit Disk Oluşturma](images/adim3.png)
 
-- Eğer Ubuntu'yu Windows'un yanına kurmak istiyorsanız, "Windows ile birlikte kur" seçeneğini seçin.
-  ![Windows ile birlikte kur](https://github.com/user-attachments/assets/9aab15c8-433f-4322-b0f6-c2e989e9bed9)
+### Adım 4: Ubuntu ISO Dosyasını Bağlama
+- **Settings** bölümüne gidip **Storage** kısmından **Empty**’ye tıkladım ve **Ubuntu ISO** dosyasını yükledim.
+- ![ISO Dosyasını Bağlama](images/adim4.png)
 
-### 6. Kullanıcı Hesabı Oluşturma
-- Kullanıcı adı ve şifre belirleyin. Şifrenizi not almayı unutmayın!
-  ![Kullanıcı Hesabı Oluşturma](https://github.com/user-attachments/assets/1b92b4c4-db2c-4f92-aa60-b103ab7b8743)
+### Adım 5: Kuruluma Başlama
+- Sanal makineyi başlatmak için **Start** butonuna tıkladım.
+- Açılan pencerede **Install Ubuntu** seçeneğini seçtim.
+- ![Kuruluma Başlama](images/adim5.png)
 
-### 7. Kurulumu Tamamlama
-- Kurulum tamamlandığında USB belleği çıkarın ve bilgisayarınızı yeniden başlatın.
-  ![Kurulumu Tamamlama](https://github.com/user-attachments/assets/48b177b2-d15a-4ff8-a856-8ed4feb08e7c)
+### Adım 6: Dil ve Klavye Düzeni Seçme
+- Kurulum dilini Türkçe olarak seçtim ve uygun klavye düzenini belirledim.
+- ![Dil ve Klavye Düzeni Seçme](images/adim6.png)
 
-- Ubuntu, bilgisayarınızda kullanıma hazır olacaktır.
-  ![Ubuntu Kullanıma Hazır](https://github.com/user-attachments/assets/35253977-e1f4-4e64-adc1-1fe419ed228c)
+### Adım 7: Kurulum Türünü Belirleme
+- **Normal Installation**’ı ve **Erase disk and install Ubuntu** seçeneğini seçtim, bu sadece sanal disk için geçerli.
+- ![Kurulum Türünü Belirleme](images/adim7.png)
+
+### Adım 8: Saat Dilimi Seçimi
+- Saat dilimini bulunduğum yere göre ayarladım.
+- ![Saat Dilimi Seçimi](images/adim8.png)
+
+### Adım 9: Kullanıcı Hesabı Oluşturma
+- Kullanıcı adı ve parola bilgilerini girerek bir kullanıcı hesabı oluşturdum.
+- ![Kullanıcı Hesabı Oluşturma](images/adim9.png)
+
+### Adım 10: Kurulumun Tamamlanmasını Bekleme
+- Kurulumun bitmesini bekledim, işlem tamamlanınca **Restart Now** ile yeniden başlattım.
+- ![Kurulumun Tamamlanmasını Bekleme](images/adim10.png)
+
+### Adım 11: ISO Dosyasını Çıkarma
+- Tekrar **Settings** > **Storage** bölümüne gidip ISO dosyasını kaldırdım.
+- ![ISO Dosyasını Çıkarma](images/adim11.png)
+
+### Adım 12: Ubuntu'yu Kullanma
+- Yeniden başlattıktan sonra Ubuntu’ya giriş yaptım ve sistem sorunsuz çalışmaya başladı.
+- ![Ubuntu'yu Kullanma](images/adim12.png)
+
+## Sonuç
+Bu adımlarla **Ubuntu 24.04**’ü başarıyla VirtualBox üzerinde kurmuş oldum ve sistemi kullanıma hazır hale getirdim.
+
+---
+
+**Not:** Her adım için eklenen görseller **images** klasöründe yer almaktadır. Herhangi bir adım hakkında sorunuz olursa memnuniyetle cevaplarım.
