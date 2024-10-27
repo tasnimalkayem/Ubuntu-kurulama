@@ -68,7 +68,3 @@ Bu repo, VirtualBox üzerinde Ubuntu 24.04 kurulumunu adım adım açıklayan bi
 
 ## Sonuç
 Bu adımlarla **Ubuntu 24.04**’ü başarıyla VirtualBox üzerinde kurmuş oldum ve sistemi kullanıma hazır hale getirdim.
-
----
-
-**Not:** Her adım için eklenen görseller **images** klasöründe yer almaktadır. Herhangi bir adım hakkında sorunuz olursa memnuniyetle cevaplarım.
